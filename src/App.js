@@ -1,11 +1,13 @@
-
+import {Users} from "./components/Users/Users";
+import {Flights} from "./components/Flights/Flights";
 
 function App() {
   return (
     <div className="App">
-      App
+      <Users/>
+        <Flights/>
     </div>
   );
 }
 
-export {App};
+export default App;
