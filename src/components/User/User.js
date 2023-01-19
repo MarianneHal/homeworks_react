@@ -2,7 +2,9 @@
 
 
 const User = ({user,choseUser}) => {
+
     const {id, name, username} = user
+
     return(
         <div>
             <h2>{name} -- {id}</h2>
@@ -12,4 +14,6 @@ const User = ({user,choseUser}) => {
     )
 
 }
+
+
 export {User}

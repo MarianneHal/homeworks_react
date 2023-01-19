@@ -4,11 +4,14 @@ import {Flight} from "../Flight/flight";
 
 
 const Flights = () => {
- const [flights, setflights] = useState([])
+
+    const [flights, setflights] = useState([])
+
     useEffect(() => {getSpace()
         .then((response) => setflights(response.data)
     );
 },[])
+
 
     return(
         <div>{

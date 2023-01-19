@@ -1,5 +1,9 @@
+
+
 const Flight = (props) => {
+
     let {item} = props
+
     return(
         <div>
             <h2>{item.mission_name}</h2>
@@ -9,4 +13,5 @@ const Flight = (props) => {
     )
 
 }
+
 export {Flight}
