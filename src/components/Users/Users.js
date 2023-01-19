@@ -26,11 +26,10 @@ const Users = () => {
         <div>
             {userDetails && (<div>{userDetails.email}</div>)}
             <hr/>
-            {posts && (<div>{posts.map(post => <Post key={post.id} post={post}/>)}</div>)}
-            <hr/>
             <h1>Users</h1>
             {users.map(user => <User key={user.id} user={user} choseUser={chooseUser} addPosts={userPosts}/>)}
-
+            <hr/>
+            {posts && (<div>{posts.map(post => <Post key={post.id} post={post}/>)}</div>)}
         </div>
     )
 }
