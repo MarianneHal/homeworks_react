@@ -1,7 +1,7 @@
 
 
 
-const User = ({user,choseUser}) => {
+const User = ({user,choseUser, addPosts}) => {
 
     const {id, name, username} = user
 
@@ -10,6 +10,7 @@ const User = ({user,choseUser}) => {
             <h2>{name} -- {id}</h2>
             <div>{username}</div>
             <button onClick={()=>{choseUser(user.id)}}>GetDetails</button>
+            <button onClick={()=>{addPosts(user.id)}}>AddPosts</button>
         </div>
     )
 

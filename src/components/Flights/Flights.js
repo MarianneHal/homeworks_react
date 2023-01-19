@@ -15,7 +15,7 @@ const Flights = () => {
 
     return(
         <div>{
-            flights.filter(item => item.launch_year !== '2020').map((item => (<Flight key={item.id} item={item}/>)))
+            flights.filter(item => item.launch_year !== '2020').map((item => (<Flight key={item.flight_number} item={item}/>)))
         }
         </div>
     )
