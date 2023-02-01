@@ -13,7 +13,7 @@ const AuthProvider = ({children}) => {
         setUser(null)
     }
 
-    const value = {user, logOut, logIn}
+    const value = {user,setUser, logOut, logIn}
 
     return (
         <AuthContext.Provider value={value}>
