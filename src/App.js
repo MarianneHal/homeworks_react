@@ -1,11 +1,11 @@
-import {UserClassComponent} from "./components/UserClassComponents/UserClassComponent";
+import {UsersClassComponent} from "./components/UserClassComponents/UsersClassComponent";
 import {CatDogComponent} from "./components/CatDogComponent/CatDogComponent";
 
 
 function App() {
   return (
     <div className="App">
-      <UserClassComponent/>
+        <UsersClassComponent/>
         <CatDogComponent/>
     </div>
   );

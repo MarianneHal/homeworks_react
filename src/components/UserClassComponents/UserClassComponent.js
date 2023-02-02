@@ -3,8 +3,8 @@ import {Component} from "react";
 
 
 class UserClassComponent extends Component {
-    constructor({user}) {
-        super({user});
+    constructor(user) {
+        super(user);
 
     }
 
