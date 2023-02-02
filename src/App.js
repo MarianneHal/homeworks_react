@@ -1,11 +1,14 @@
+import {UserClassComponent} from "./components/UserClassComponents/UserClassComponent";
+import {CatDogComponent} from "./components/CatDogComponent/CatDogComponent";
 
 
 function App() {
   return (
     <div className="App">
-      App
+      <UserClassComponent/>
+        <CatDogComponent/>
     </div>
   );
 }
 
-export {App};
+export default App;
