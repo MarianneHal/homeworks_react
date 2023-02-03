@@ -1,27 +1,27 @@
 import {Component} from "react";
 
-import {userService} from "../../Services/userService";
+import {userService} from "../../services/userService";
 import {UserClassComponent} from "./UserClassComponent";
-import {axiosService} from "../../Services/AxiosService";
+
 
 
 class UsersClassComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = {user: []};
+        this.state = {users: []};
 
     }
 
 
     componentDidMount() {
-        userService.getAll().then(({response}) => this.setState([...response]))
+        userService.getAll().then(({data})=> this.setState({users:[...data]}))
     }
 
 
     render() {
         return(
             <div>
-                {this.state.user.map((user) => <UserClassComponent key={user.id} user={user}/>)}
+                {this.state.users.map(user => <UserClassComponent key={user.id} user={user}/>)}
             </div>
         )
     }

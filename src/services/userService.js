@@ -1,4 +1,4 @@
-import {axiosService} from "./AxiosService";
+import {axiosService} from "./axiosService";
 import {urls} from "../configs/urls";
 
 
