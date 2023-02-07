@@ -2,7 +2,6 @@ import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
 import {User} from "../User/User";
-import {userServices} from "../../services";
 import {userAction} from "../../redux";
 
 const Users = () => {

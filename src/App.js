@@ -1,4 +1,4 @@
-import {Users, Header} from "./componets";
+import {Users, Header, Posts} from "./componets";
 
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
         <hr/>
         <Users/>
       <hr/>
+        <Posts/>
     </div>
   );
 }

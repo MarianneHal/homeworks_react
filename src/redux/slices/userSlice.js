@@ -4,7 +4,7 @@ import {userServices} from "../../services";
 
 
 const initialState = {
-    users: [],
+    users:[],
     errors: null,
     loading: null,
     selectedUser: null
@@ -20,7 +20,8 @@ const getAll = createAsyncThunk(
             return rejectWithValue(e.response.data)
         }
     }
-)
+);
+
 const getById = createAsyncThunk(
     'userSlice/getById',
     async ({id}, {rejectWithValue}) => {
@@ -60,6 +61,10 @@ const userSlice = createSlice({
             })
             .addCase(getById.pending, (state,action) => {
                 state.loading = true
+            })
+            .addCase(getById.rejected, (state, action) => {
+                state.loading = false
+                state.errors = action.payload
             })
 
 });

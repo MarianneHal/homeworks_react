@@ -5,18 +5,21 @@ import {postServices} from "../../services";
 import {postAction} from "../../redux";
 import {Post} from "../Post/Post";
 
+
 const Posts = () => {
 
-    const {posts} = useSelector(state => state.posts)
+    const {posts, errors, loading} = useSelector(state => state.posts)
     const dispatch = useDispatch();
 
     useEffect(() => {
-       postServices.getAll().then(({data}) => dispatch(postAction.getAll(data)))
+       dispatch(postAction.getAll())
    }, [])
 
 
     return(
         <div>
+            {errors && JSON.stringify(errors)}
+            {loading && <h1>Loading!</h1>}
             {posts.map(post => <Post key={post.id} post={post}/>)}
         </div>
     )
