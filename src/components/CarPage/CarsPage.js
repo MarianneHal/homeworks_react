@@ -1,5 +1,5 @@
-import {CarForm} from "./CarForm";
-import {Cars} from "./Cars";
+import {CarForm} from "../Forms/CarForm";
+import {Cars} from "../Cars/Cars";
 
 const CarsPage = () => {
 
