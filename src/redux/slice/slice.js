@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {carService} from "../../services";
 
 const initialState = {
@@ -64,19 +65,21 @@ const carSlicer = createSlice({
     reducers: {
         setCarForUpdate: (state, action) => {
             state.carForUpdate = action.payload
+
         }
     },
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
                 state.cars = action.payload
+                state.loading = false
+            })
+            .addDefaultCase((state, action) => {
+               const [actionStatus] = action.type.split('/').slice(-1);
+               state.loading = actionStatus === 'pending';
             })
 
-
-
 });
-
-
 
 
 const {reducer:carReducer, actions:{setCarForUpdate}} = carSlicer;
@@ -87,11 +90,10 @@ const carActions = {
     deleteCar,
     setCarForUpdate,
     upDate
-
 }
+
 
 export {
     carReducer,
     carActions,
-
 }

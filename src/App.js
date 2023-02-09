@@ -1,6 +1,5 @@
 import {Route, Routes, useNavigate} from "react-router-dom";
 
-
 import {CarsPage} from "./components/CarPage/CarsPage";
 import css from "./main.module.css"
 
