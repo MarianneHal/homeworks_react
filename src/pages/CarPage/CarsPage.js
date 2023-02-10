@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
 
-import {CarForm} from "../Forms/CarForm";
-import {Cars} from "../Cars/Cars";
+import {CarForm} from "../../components/Forms/CarForm";
+import {Cars} from "../../components/Cars/Cars";
 
 
 const CarsPage = () => {

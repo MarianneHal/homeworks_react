@@ -1,7 +1,7 @@
-import {Route, Routes, useNavigate} from "react-router-dom";
+import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 
-import {CarsPage} from "./components/CarPage/CarsPage";
-import css from "./main.module.css"
+import {AuthRequireLayout, MainLayout} from "./  layouts";
+import {CarsPage, LoginPage, RegisterPage} from "./pages";
 
 
 
@@ -10,16 +10,19 @@ function App() {
     const navigate = useNavigate();
 
   return (
-      <div>
-          <div className={css.buttonDiv}>
+      <Routes>
+          <Route path={'/'} element={<MainLayout/>}>
+              <Route index element={<Navigate to={'cars'}/>}/>
 
-              <button className={css.button} onClick={()=>navigate('/cars')}>Cars</button>
-          </div>
-         <Routes>
+              <Route element={<AuthRequireLayout/>}>
+                  <Route path={'cars'} element={<CarsPage/>}/>
+              </Route>
+          </Route>
 
-            <Route path={'/cars'} element={<CarsPage/>}/>
-         </Routes>
-      </div>
+          <Route path={'login'} element={<LoginPage/>}/>
+          <Route path={'register'} element={<RegisterPage/>}/>
+
+      </Routes>
   );
 }
 
